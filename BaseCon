@@ -1,0 +1,64 @@
+
+package nolan;
+
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+
+public class BaseCon {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		BufferedReader br;
+		String output = "";
+		String numline;
+		try {
+			br = new BufferedReader(new FileReader("basecon.dat"));
+			numline = br.readLine();
+			System.out.println(numline);
+
+			for (int i = 0; i < Integer.parseInt(numline); i++) {
+				output = br.readLine();
+				String input[] = output.split(" ");
+				switch (input[0]) {
+				case "D":
+					System.out.print(input[1]);
+					System.out.print(" "+ Integer.toString(Integer.parseInt(input[1], 10), 16));
+					System.out.print(" "+ Integer.toString(Integer.parseInt(input[1], 10), 8));
+					System.out.print(" "+ Integer.toString(Integer.parseInt(input[1], 10), 2));
+					break;
+				case "H":
+					System.out.print(Integer.toString(Integer.parseInt(input[1], 16), 10));
+					System.out.print(" "+input[1]);
+					System.out.print(" "+ Integer.toString(Integer.parseInt(input[1], 16), 8));
+					System.out.print(" "+ Integer.toString(Integer.parseInt(input[1], 16), 2));
+					break;
+				case "O":
+					System.out.print(Integer.toString(Integer.parseInt(input[1], 8), 10));
+					System.out.print(" "+ Integer.toString(Integer.parseInt(input[1], 8), 16));
+					System.out.print(" "+input[1]);
+					System.out.print(" "+ Integer.toString(Integer.parseInt(input[1], 8), 2));
+					break;
+				case "B":
+					System.out.print(Integer.toString(Integer.parseInt(input[1], 2), 10));
+					System.out.print(" "+Integer.toString(Integer.parseInt(input[1], 2), 16));
+					System.out.print(" "+ Integer.toString(Integer.parseInt(input[1], 2), 8));
+					System.out.print(" "+input[1]);
+					break;
+
+				default:
+					break;
+				}
+				System.out.println();
+
+			}
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+	}
+
+}
+
