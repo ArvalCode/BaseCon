@@ -1,0 +1,18 @@
+An initial positive integer n followed by n data pairs, each on its own line, each consisting of a single 
+capital letter indicating the base - 'D', 'H', 'O', or 'B'. Followed by a value in the base, with one space of seperation.
+
+Output:
+All four bases values in order Decimal, Hex, Octal, Binary, as shown below.
+
+Example Input File:
+4
+D 34
+H 8e
+11
+f0f
+
+Example Output:
+34 22 42 100010
+142 8e 216 10001110
+3 3 3 11
+3855 f0f 7417 111100001111
